@@ -1,2 +1,2 @@
-# Projects
-Computer Vision
+#Computer Vision
+OpenCv, Python, Ml
