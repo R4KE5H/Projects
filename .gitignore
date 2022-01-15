@@ -1,2 +1,7 @@
 # neglecting bigger files
 Project 1/*.avi
+Inference_yolo/Data/*
+Inference_yolo/Model/YoloV3/*.weights
+Inference_yolo/Model/YoloV3-tiny/*.weights
+Project 2/*.avi
+Project 2/*.mp4
