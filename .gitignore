@@ -6,4 +6,4 @@ Inference_yolo/Model/YoloV3-tiny/*.weights
 Project 2/*.avi
 Project 2/*.mp4
 django_aws/webcam/streaming/static/images/*
-django_aws/webcam/*.sqlite3
+# django_aws/webcam/*.sqlite3
