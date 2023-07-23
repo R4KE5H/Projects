@@ -9,4 +9,5 @@ django_aws/webcam/streaming/static/images/*
 Object detection/data/*
 Object detection/Object_detection_TestSet/*
 Object detection/Yolo/*.weights
+Nosql/.ipynb_checkpoints
 # django_aws/webcam/*.sqlite3
