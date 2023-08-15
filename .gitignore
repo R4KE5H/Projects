@@ -10,4 +10,6 @@ Object detection/data/*
 Object detection/Object_detection_TestSet/*
 Object detection/Yolo/*.weights
 Nosql/.ipynb_checkpoints
+pyspark_practice/.ipynb_checkpoints
+NLP/.ipynb_checkpoints
 # django_aws/webcam/*.sqlite3
