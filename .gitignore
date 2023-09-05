@@ -14,4 +14,5 @@ pyspark_practice/.ipynb_checkpoints
 pyspark_practice/basic_data_exploration_user_profile.ipynb
 pyspark_practice/data_exploration_play_counts.ipynb
 NLP/.ipynb_checkpoints
+OpenAI\Quickstart\openai-quickstart-python\.env
 # django_aws/webcam/*.sqlite3
