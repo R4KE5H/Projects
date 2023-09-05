@@ -1,2 +1,2 @@
 #Computer Vision
-OpenCv, Python, Ml
+OpenCv, Python, Ml, LLM, OpenAI, Langchain
