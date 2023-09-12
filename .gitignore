@@ -18,3 +18,4 @@ OpenAI\Quickstart\openai-quickstart-python\.env
 OpenAI/langchain/.env
 # django_aws/webcam/*.sqlite3
 Hugging_face/transformers
+OpenAI\Quickstart_\*
