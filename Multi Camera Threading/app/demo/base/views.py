@@ -47,8 +47,8 @@ class Streaming():
             boxes_ids = self.tracker.update(results["car"])  
             frame = self.draw_on_frame(frame,boxes_ids)
             self.frame=frame                   
-            cv2.imshow(self.camera_name, cv2.resize(self.frame, (640,420)))
-            cv2.waitKey(10)
+            # cv2.imshow(self.camera_name, cv2.resize(self.frame, (640,420)))
+            # cv2.waitKey(10)
         
 
 
