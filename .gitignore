@@ -19,5 +19,6 @@ OpenAI/langchain/.env
 # django_aws/webcam/*.sqlite3
 Hugging_face/transformers
 OpenAI\Quickstart_\*
-Multi Camera Threading/app/demo/base/settings/models/*
-Multi Camera Threading/app/demo/base/settings/videos/*
+Multi Camera Threading/app/demo/base/settings/models/camera 1
+Multi Camera Threading/app/demo/base/settings/models/camera 2
+Multi Camera Threading/app/demo/base/settings/videos/*.mp4
