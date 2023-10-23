@@ -1,6 +1,6 @@
 {
   "Camera 1": {
-    "stream": "D:/PERSONNAL/personal/Assignment/rudram/highway.mp4",
+    "stream": "./base/settings/videos/highway.mp4",
     "yolo": {
       "cfg": "./base/settings/models/camera 1/yolov3-tiny.cfg",
       "weights": "./base/settings/models/camera 1/yolov3-tiny.weights",
@@ -8,7 +8,7 @@
     }
   },
   "Camera 2": {
-    "stream": "D:/PERSONNAL/personal/Assignment/rudram/highway.mp4",
+    "stream": "./base/settings/videos/highway.mp4",
     "yolo": {
       "cfg": "./base/settings/models/camera 2/yolov3-tiny.cfg",
       "weights": "./base/settings/models/camera 2/yolov3-tiny.weights",

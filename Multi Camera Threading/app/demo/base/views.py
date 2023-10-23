@@ -7,7 +7,7 @@ from .analytics.tracker import EuclideanDistTracker
 import threading
 from django.http.response import StreamingHttpResponse
 import numpy as np
-
+import os
 
 class Streaming():
     streams={}
@@ -41,7 +41,7 @@ class Streaming():
         while self.cap.isOpened():
             ret, frame = self.cap.read()
             if ret==False:
-                self.frame=cv2.read("./dummy.jpg")
+                self.frame=cv2.imread("./dummy.jpg")
             h, w, _ = frame.shape
             results = self.detector.detect(frame, conf=0.3)
             boxes_ids = self.tracker.update(results["car"])  
@@ -84,7 +84,7 @@ def index2(request):
 
 def send_images(id_ref):
     while True:
-        ret, buffer = cv2.imencode(".jpg", Streaming.streams[id_ref].frame if Streaming.streams[id_ref].frame.any() else cv2.read("./dummy.jpg") )
+        ret, buffer = cv2.imencode(".jpg", Streaming.streams[id_ref].frame if Streaming.streams[id_ref].frame.any() else cv2.imread("./dummy.jpg") )
         img = buffer.tobytes()
         yield b'--frame\r\nContent-Type: image/jpeg\r\n\r\n' + img + b'\r\n'
 

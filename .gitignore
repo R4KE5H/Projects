@@ -20,3 +20,4 @@ OpenAI/langchain/.env
 Hugging_face/transformers
 OpenAI\Quickstart_\*
 Multi Camera Threading\app\demo\base\settings\models\*
+Multi Camera Threading\app\demo\base\settings\videos\*
