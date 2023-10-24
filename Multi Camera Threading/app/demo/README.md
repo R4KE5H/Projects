@@ -9,7 +9,7 @@ The application is designed in such a way that it runs an ML model in Multi-Came
 
 Each “Streaming()” object is initiated using threading and for each camera, certain weights have been loaded via the “setting.json” file.
 
-
+![alt text](https://github.com/R4KE5H/Projects/blob/main/Multi%20Camera%20Threading/app/demo/Multi%20Camera%20Threading%20Flowchart.png)
 
 
 
