@@ -7,7 +7,11 @@ class Detection:
         self.network = cv2.dnn.readNetFromDarknet(cfg,weight)
         self.classes = classes
         self.layer_names = self.network.getLayerNames()
-        self.outputlayers = [self.layer_names[i - 1] for i in self.network.getUnconnectedOutLayers()]
+        try:
+            self.outputlayers = [self.layer_names[i - 1] for i in self.network.getUnconnectedOutLayers()]
+        except:
+            self.outputlayers = [self.layer_names[i[0] - 1]  for i in self.network.getUnconnectedOutLayers()]
+
 
     def Detectionboxes(self,box):
         x, y, w, h = box
@@ -53,7 +57,10 @@ class Detection:
         
         for key, index in indices.items():
             for i in index:
-                select = i
+                try:
+                    select = i[0]
+                except:
+                    select = i   
                 detection_output[key].append(self.Detectionboxes(boxes[key][select]))
 
         return detection_output

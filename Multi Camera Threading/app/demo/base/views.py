@@ -9,6 +9,8 @@ from django.http.response import StreamingHttpResponse
 import numpy as np
 import os
 
+print(threading.active_count())
+
 class Streaming():
     """
     This class function is used to store the each camera details
