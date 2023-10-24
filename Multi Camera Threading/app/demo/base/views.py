@@ -10,6 +10,9 @@ import numpy as np
 import os
 
 class Streaming():
+    """
+    This class function is used to store the each camera details
+    """    
     streams={}
     def __init__(self, path:str, weights:str, cfg:str, classes_path:str,camera_name:str):
         self.camera_name=camera_name
@@ -29,6 +32,14 @@ class Streaming():
     
     @staticmethod
     def draw_on_frame(frame,boxes_ids):
+        """
+        Args:
+            frame ([numpy array]): Receives the image from video source
+            boxes_ids ([list]): Receives the detcetion co ordinate 
+
+        Returns:
+            [numpy array]: Returns the frame with detected bounding boxes
+        """        
         for box_id in boxes_ids:
             x1,y1,x2,y2,id = box_id
             cv2.putText(frame, str(id),(x1,y1-15),  cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0,0,255), 2)
@@ -38,6 +49,9 @@ class Streaming():
 
 
     def read_frame(self):
+        """
+        Read the frame and detect the trained objects with tracking id using euclidean distance 
+        """        
         while self.cap.isOpened():
             ret, frame = self.cap.read()
             if ret==False:
@@ -54,6 +68,9 @@ class Streaming():
 
        
 def main():
+    """
+    This function is used to initialize the camera and its thread
+    """    
     f = open("./base/settings/setting.json")
     data = json.load(f)
     f.close()
@@ -71,23 +88,55 @@ def main():
 
 
 if True:
+    """
+    Initializing the main function
+    """    
     main()
 
 
 def index(request):
+    """
+    Args:
+        request ([HttpRequest]): Recieves HttpRequest
+
+    Returns:
+        [HttpResponse]: Return HttpResponse 
+    """    
     return render(request, 'index/index1.html')
 
 
 def index2(request):
+    """
+    Args:
+        request ([HttpRequest]): Recieves HttpRequest
+
+    Returns:
+        [HttpResponse]: Return HttpResponse 
+    """ 
     return render(request, 'index/index2.html')
 
 
 def send_images(id_ref):
+    """
+    Args:
+        id_ref ([str]): Receives the camera id 
+
+    Yields:
+        [str]: Returns encoded image
+    """    
     while True:
         ret, buffer = cv2.imencode(".jpg", Streaming.streams[id_ref].frame if Streaming.streams[id_ref].frame.any() else cv2.imread("./dummy.jpg") )
         img = buffer.tobytes()
         yield b'--frame\r\nContent-Type: image/jpeg\r\n\r\n' + img + b'\r\n'
 
 def image_stream(request, id_ref):
+    """
+    Args:
+        request ([HttpRequest]): Recieves HttpRequest
+        id_ref ([str]): Recieves reference id
+
+    Returns:
+        [type]: [description]
+    """    
     return StreamingHttpResponse(send_images(id_ref),
                                  content_type='multipart/x-mixed-replace; boundary=frame')

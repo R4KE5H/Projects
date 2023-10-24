@@ -3,7 +3,6 @@ import numpy as np
 
 
 class Detection:
-
     def __init__(self, cfg, weight, classes):
         self.network = cv2.dnn.readNetFromDarknet(cfg,weight)
         self.classes = classes
@@ -34,7 +33,6 @@ class Detection:
                 scores = detection[5:]
                 class_id = np.argmax(scores)
                 confidence = scores[class_id]
-
                 if confidence > conf[int(class_id)]:
                     center_x = int(detection[0] * Width)
                     center_y = int(detection[1] * Height)
