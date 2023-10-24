@@ -7,7 +7,7 @@ from .analytics.tracker import EuclideanDistTracker
 import threading
 from django.http.response import StreamingHttpResponse
 import numpy as np
-import os
+import os, time
 
 print(threading.active_count())
 
@@ -55,6 +55,7 @@ class Streaming():
         Read the frame and detect the trained objects with tracking id using euclidean distance 
         """        
         while self.cap.isOpened():
+            start_time=time.time()
             ret, frame = self.cap.read()
             if ret==False:
                 self.frame=cv2.imread("./dummy.jpg")
@@ -62,6 +63,8 @@ class Streaming():
             results = self.detector.detect(frame, conf=0.3)
             boxes_ids = self.tracker.update(results["car"])  
             frame = self.draw_on_frame(frame,boxes_ids)
+            try:cv2.putText(frame, "fps: {}".format(1 / (time.time() - start_time)), (50, 100), cv2.FONT_HERSHEY_SIMPLEX, 2.5, (0, 255, 0),thickness=1)
+            except:pass    
             self.frame=frame                   
             # cv2.imshow(self.camera_name, cv2.resize(self.frame, (640,420)))
             # cv2.waitKey(10)
