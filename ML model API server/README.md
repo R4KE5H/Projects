@@ -13,6 +13,7 @@ Each “Streaming()” object is initiated using threading and for each camera, 
 The Flask server is deployed for “Yolov8” inference. “http://127.0.0.1:5000/yolov8n” API is integrated to run the inference in yolov8 model. Camera name and Frame are passed as post request and decoded to get the detection boxes and tracking ids. 
 
 The Below diagram represents the flow of the application:
+![alt text](https://github.com/R4KE5H/Projects/blob/main/ML%20model%20API%20server/a2.drawio.png)
 
 
 
