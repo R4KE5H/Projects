@@ -22,3 +22,5 @@ OpenAI\Quickstart_\*
 Multi Camera Threading/app/demo/base/settings/models/camera 1
 Multi Camera Threading/app/demo/base/settings/models/camera 2
 Multi Camera Threading/app/demo/base/settings/videos/*.mp4
+ML model API server/WEB server/base/settings/models/*
+ML model API server/WEB server/base/settings/videos/*

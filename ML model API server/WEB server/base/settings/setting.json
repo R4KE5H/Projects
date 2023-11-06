@@ -1,0 +1,20 @@
+{
+  "Camera 1": {
+    "stream": "./base/settings/videos/highway.mp4",
+    "model_api":"http://127.0.0.1:5000/yolov8n",
+    "yolo": {
+      "cfg": "./base/settings/models/camera 1/yolov3-tiny.cfg",
+      "weights": "./base/settings/models/camera 1/yolov3-tiny.weights",
+      "classes": "./base/settings/models/camera 1/coco.txt"
+    }
+  },
+  "Camera 2": {
+    "stream": "./base/settings/videos/highway.mp4",
+    "model_api":false,
+    "yolo": {
+      "cfg": "./base/settings/models/camera 2/yolov3-tiny.cfg",
+      "weights": "./base/settings/models/camera 2/yolov3-tiny.weights",
+      "classes": "./base/settings/models/camera 2/coco.txt"
+    }
+  }
+}

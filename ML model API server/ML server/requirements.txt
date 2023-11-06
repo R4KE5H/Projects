@@ -1,0 +1,7 @@
+flask
+opencv-contrib-python
+opencv-python
+torch==1.13.1
+ultralyticsplus==0.0.28
+imageio
+Pillow==9.2.0
